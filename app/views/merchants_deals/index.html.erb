@@ -1,0 +1,27 @@
+<h1>Listing deals</h1>
+
+<table>
+  <tr>
+    <th>Live at</th>
+    <th>Merchant</th>
+    <th>Copy</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deals.each do |deal| %>
+  <tr>
+    <td><%= deal.live_at %></td>
+    <td><%= deal.merchant_id %></td>
+    <td><%= deal.copy %></td>
+    <td><%= link_to 'Show', merchant_deal_path(deal.merchant, deal) %></td>
+    <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
+    <td><%= link_to 'Destroy', deal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal', new_deal_path %>

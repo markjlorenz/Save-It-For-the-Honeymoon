@@ -1,0 +1,23 @@
+<h1 class='redeem-title'>My Purchased Deals</h1>
+
+<div class='section auto-width'>
+<div class='section'>
+<table>
+  <tr>
+    <th></th>
+    <th>Bridal Vendor</th>
+    <th>Deal</th>
+    <th></th>
+  </tr>
+
+<% @purchased_deals.each do |purchased_deal| %>
+  <tr>
+    <td><%= render '/deals/deal_picture', deal:purchased_deal.deal%></td>
+    <td><%= purchased_deal.deal.merchant.name %></td>
+    <td><%= purchased_deal.deal.copy_subheader %></td>
+    <td><%= link_to 'Show', purchased_deal %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+</div>

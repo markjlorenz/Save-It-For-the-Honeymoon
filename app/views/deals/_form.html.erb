@@ -1,0 +1,41 @@
+<%= form_for(@deal, html:{multipart:true}) do |f| %>
+  <% if @deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+      <% @deal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :live_at %><br />
+    <%= f.datetime_select :live_at %>
+  </div>
+  <div class="field">
+    <%= f.label :merchant_id %><br />
+    <%= f.text_field :merchant_id %>
+  </div>
+  <div class="field">
+    <%= f.label :copy_header %><br />
+    <%= f.text_area :copy_header %>
+  </div>
+  <div class="field">
+    <%= f.label :copy_subheader %><br />
+    <%= f.text_area :copy_subheader %>
+  </div>
+  <div class="field">
+    <%= f.label :copy %><br />
+    <%= f.text_area :copy %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

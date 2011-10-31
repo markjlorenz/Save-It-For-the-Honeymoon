@@ -1,0 +1,4 @@
+var $new_flashes = $("<% flash.each do |key, value| -%><div class='flash section <%= key %>'><%=h value %></div><% end -%>"); 
+$('.flash').last().after($new_flashes);
+$new_flashes.hide();
+$new_flashes.show('slide', {direction: 'right'}, 500);

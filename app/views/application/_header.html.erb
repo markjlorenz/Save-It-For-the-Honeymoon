@@ -1,0 +1,22 @@
+<div id='header' class='section'>
+  <%= link_to root_url, style:'text-decoration:none;' do %>
+    <h1>Save It For The Honeymoon!</h1>
+  <% end %>
+  <span class='tag-line'>Your destination for wedding savings.</span>
+
+  <ul id='site-menu' class='linear'>
+    <!--<li><%= link_to_unless_current 'For Brides', '#' %></li>
+    <li><%= link_to 'For Merchants', '#' %></li>-->
+    <% unless current_user.nil? %>
+      <li>
+        <span>Hi, </span> 
+        <strong><%= current_user.name_from_email %></strong>
+        <span class='small'> - Not you? </span>
+        <%= link_to "Sign out", sign_out_path, :method=>:delete, class:'small' %>
+      </li>
+      <li>
+        <%= link_to "My Stuff", consumer_purchased_deals_path(current_user.consumer) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

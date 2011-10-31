@@ -1,0 +1,13 @@
+<div class='section'>
+   <%= image_tag 'clip.png', style:'position:absolute; z-index:1; height:100px; top:-18px; left:-36px;'  %>
+  <%= render 'deals/deal_picture', deal:@deal%>
+
+  <div class='section'>
+    <%= button_to "Buy It!", purchased_deals_path("purchased_deal[deal_id]"=>@deal.id), class:'buy-it' %>
+    <div class='deal-headline'>
+      <h1><%= @deal.copy_header.html_safe %></h1>
+      <h2><%= @deal.copy_subheader.html_safe %></h2>
+      <div><%= @deal.copy.html_safe %></div>
+    </div>
+  </div>
+</div>

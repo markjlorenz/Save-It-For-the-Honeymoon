@@ -1,0 +1,68 @@
+div.field.inline{
+  display:inline-block;
+}
+input.datepicker{
+  width:8em;
+}
+textarea{
+  border:none;
+   height:5em;
+   box-shadow:inset 0px 0px 5px #000000;
+}
+label+br+input,label+br+select, label+br+textarea,label+br+div.contact-field,label+div.indented, div.datepicker{
+  margin-left:2em;
+}
+input[type='text'], textarea, input[type='tel'], input[type='email'], input[type='password']{
+  width:20em;
+  -moz-border-radius: 5px;
+
+  padding-left:1em;
+  border-radius: 5px;
+  font-size:120%;
+}
+input[type='tel']{
+  width:10em;
+}
+input[name$='[zip_code]'], input[name$='[postal_code]']{
+  width:5em;
+}
+span.destroy{
+  -moz-border-radius: 5px;
+
+  white-space:nowrap;
+  padding:0.25em;
+  border-radius: 5px;
+  box-shadow:inset 0px 0px 2px #000000;
+}
+span.destroy .ui-icon{
+  display:inline-block;
+}
+form{
+  text-align:left;
+}
+form .note{
+  font-size:90%;
+  display:inline-block;
+  max-width:30em;
+  white-space: normal;
+}
+form .note:before{
+  content: '(';
+}
+form .note:after{
+  content: ')';
+}
+
+div.monthpicker .ui-datepicker-calendar{
+  display:none !important;
+}
+.inline{
+ display:inline;
+}
+[name="wedding-date"]>div.tabbed{
+  margin-left:2em;
+}
+form>.field, form>.actions{
+  margin-left:1em;
+  margin-right:1em;
+}

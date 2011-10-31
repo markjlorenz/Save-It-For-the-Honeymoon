@@ -1,0 +1,53 @@
+<%= form_for(@consumer, html:{class:"inline", remote:true}) do |f| %>
+
+  <%= f.fields_for :user do |f|%>
+    <div class="field inline">
+      <!--<%= f.label :email %><br />-->
+      <%= f.text_field :email, :type => "email", placeholder:"Your Email Address" %>
+    </div>
+    <br />
+    <div class="field hide-until-email inline">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+  <% end %>
+
+  <div name="wedding-date" class="field hide-until-email inline">
+    <%= f.label "When's Your Wedding?" %><br />
+    <div class="field inline tabbed">
+      <%= f.select :wedding_month, @months  %>
+    </div>
+    <div class="field inline">
+      <%= f.select :wedding_year, @years  %>
+    </div>
+  </div>
+
+  <div class="field inline hide-until-email">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="actions inline hide-until-email">
+    <%= f.submit "Send Me The Deals!" %>
+  </div>
+
+  <% if @consumer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consumer.errors.count, "error") %> prohibited this consumer from being saved:</h2>
+
+      <ul>
+      <% @consumer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  $(".hide-until-email").hide();
+  $("input[name*='email']").focus(function(){
+    $(".hide-until-email").slideDown();
+  });
+</script>
+

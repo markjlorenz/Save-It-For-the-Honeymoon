@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Wedding month:</b>
+  <%= @consumer.wedding_month %>
+</p>
+
+<p>
+  <b>Wedding year:</b>
+  <%= @consumer.wedding_year %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%= @consumer.postal_code %>
+</p>
+
+<p>
+  <b>Authenticateable:</b>
+  <%= @consumer.authenticateable_id %>
+</p>
+
+<p>
+  <b>Authenticateable type:</b>
+  <%= @consumer.authenticateable_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_path(@consumer) %> |
+<%= link_to 'Back', consumers_path %>

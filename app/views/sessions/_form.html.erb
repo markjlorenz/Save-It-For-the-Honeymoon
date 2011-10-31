@@ -1,0 +1,18 @@
+<%= form_for :session, :url => session_path, remote:true do |form| %>
+
+  <% if @clearance_login_failure %>
+    <%= render 'application/ui_error', text:'Wrong Email or Password' %>
+  <% end %>
+
+  <div class="text_field">
+    <!-- <%= form.label :email %> -->
+    <%= form.text_field :email, :type => "email", placeholder:"Email" %>
+  </div>
+  <div class="text_field">
+    <!-- <%= form.label :password %> -->
+    <%= form.password_field :password, placeholder:"Password" %>
+  </div>
+  <div class="submit_field">
+    <%= form.submit "Sign in" %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<div id='footer-container'>
+  <div id='footer'>A Dapple Before Dawn Production, Copyright 2011 </div> 
+  <%= image_tag 'dapplebeforedawn_logo.png', class:'dapple-logo' %>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($){
+    $('#footer').addClass('footer-hide');
+    $('.dapple-logo').hover(function(e){
+      $('#footer').addClass('footer-show');
+      $('#footer').removeClass('footer-hide');
+    }, function(e){
+      $('#footer').removeClass('footer-show');
+      $('#footer').addClass('footer-hide');
+    });
+  });
+</script>

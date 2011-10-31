@@ -1,0 +1,42 @@
+<h1 class='redeem-title'> Redeem the Deal You Bought: </h1>
+<p id="notice"><%= notice %></p>
+
+
+<div class='section' style='float:left;'>
+  <% @deal = @purchased_deal.deal %>
+  <%= render template:'deals/show' %>
+</div>
+
+<div style='float:left;'>
+  <dl class='favor'>
+    <dd>
+      <img src="<%= @barcode_url %>">
+    </dd>
+    <dt>
+      <ul class='linear'>
+        <li>
+          <b>Your Favor: </b>
+        </li>
+        <li>
+          <%= link_to 'Email to Smart Phone', '#' %>
+        </li>
+        <li>
+          <%= link_to 'Print It', '#' %>
+        </li>
+      </ul>
+    </dt>
+  </dl>
+</div>
+
+<style type="text/css">
+  #content{
+    padding-right: 20px;
+    padding-left: 120px
+  }
+  dl.favor>dt{
+    color:white;
+  }
+  .buy-it{
+    display:none !important;
+  }
+</style>

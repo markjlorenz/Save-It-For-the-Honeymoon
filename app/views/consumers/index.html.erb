@@ -1,0 +1,31 @@
+<h1>Listing consumers</h1>
+
+<table>
+  <tr>
+    <th>Wedding month</th>
+    <th>Wedding year</th>
+    <th>Postal code</th>
+    <th>Authenticateable</th>
+    <th>Authenticateable type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consumers.each do |consumer| %>
+  <tr>
+    <td><%= consumer.wedding_month %></td>
+    <td><%= consumer.wedding_year %></td>
+    <td><%= consumer.postal_code %></td>
+    <td><%= consumer.authenticateable_id %></td>
+    <td><%= consumer.authenticateable_type %></td>
+    <td><%= link_to 'Show', consumer %></td>
+    <td><%= link_to 'Edit', edit_consumer_path(consumer) %></td>
+    <td><%= link_to 'Destroy', consumer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consumer', new_consumer_path %>

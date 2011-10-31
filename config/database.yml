@@ -1,0 +1,21 @@
+common: &common
+  adapter: postgresql
+  username: postgres
+  password: novirus
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *common
+  database: saveitforthehoneymoon-devel
+
+test: &test
+  <<: *common
+  database: saveitforthehoneymoon-test
+
+production:
+  <<: *common
+  database: saveitforthehoneymoon-prod
+
+cucumber:
+  <<: *test

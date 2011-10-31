@@ -1,0 +1,2 @@
+module MerchantsDealsHelper
+end

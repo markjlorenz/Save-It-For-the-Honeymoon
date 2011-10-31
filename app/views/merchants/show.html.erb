@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @merchant.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @merchant.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @merchant.phone %>
+</p>
+
+<p>
+  <b>Contact name:</b>
+  <%= @merchant.contact_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @merchant.address %>
+</p>
+
+<p>
+  <b>Authenticateable:</b>
+  <%= @merchant.authenticateable_id %>
+</p>
+
+<p>
+  <b>Authenticateable type:</b>
+  <%= @merchant.authenticateable_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
+<%= link_to 'Back', merchants_path %>

@@ -1,0 +1,46 @@
+#footer-container{
+  position:absolute;
+  bottom:40px;
+  right:0;
+  height: 2em;
+  width:100%
+}
+#footer{
+  position:relative;
+  /*background-color:darkgray;*/
+  background: url('/images/10x1px-ribbonesque-left.png') repeat-y left top, url('/images/10x1px-ribbonesque-right.png') repeat-y right top, darkgray;
+  padding: 1em;
+  padding-left: 75px;
+  padding-right: 2em;
+  color:black;
+}
+
+#footer-container .dapple-logo{
+  position:absolute; 
+  height:100px; 
+  width:auto;
+  right:5px;
+  top:50%;
+  margin-top:-50px
+}
+
+#footer-container .dapple-logo{
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+}
+
+#footer-container .dapple-logo:hover{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+#footer{
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+#footer.footer-show{
+  visibility:visible;
+}
+#footer.footer-hide{
+  visibility:hidden;
+}

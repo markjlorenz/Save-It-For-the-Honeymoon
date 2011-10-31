@@ -1,0 +1,17 @@
+#signin{
+  width:auto;
+  display:table;
+  float:none;
+  margin: 10px auto;
+}
+#signin>.section{
+  margin: 1em;
+}
+#signin form .text_field{
+  text-align:right;
+  margin-left:1em;
+}
+#signin a{
+  color:black;
+}
+

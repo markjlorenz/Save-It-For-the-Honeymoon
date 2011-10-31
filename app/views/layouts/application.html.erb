@@ -1,0 +1,50 @@
+
+<html>
+<head>
+  <title>Save It For The Honeymoon!</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery-1.6.1.min.js' %>
+  <%= javascript_include_tag 'rails.js', 'jquery-ui-1.8.13.custom.min' %>
+  <%= javascript_include_tag 'jquery.flash', 'jquery.loading-overlay', 'jquery.cookie', 'noisy'%>
+  <%= javascript_include_tag 'modernizr.custom.71148' %>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tag %>
+  <style type="text/css">
+    html{
+      background: url('/images/bgimage-3.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/bgimage-3.jpg', sizingMethod='scale');
+      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/bgimage-3.jpg', sizingMethod='scale')";
+    }
+  </style>
+</head>
+<body>
+
+  <div id='layout-container'>
+    <%= render 'application/header' %>
+
+    <div class='flash'><!-- placeholder flash --></div>
+    <% flash.each do |key, value| -%>
+      <div class='flash section <%= key %>'><%=h value %></div>
+    <% end -%>
+
+    <% if @allow_new_users && current_user.nil? %>
+      <div id='new_user_signup'>
+        <div style='float:right;'><%= link_to 'Or, Sign In', '#signin' %></div>
+        <h2>New Here? Let's Get You Started! </h2> 
+        <%= render '/consumers/form' %>
+      </div>
+        <%= render '/application/signin' %>
+    <% end %>
+      
+    <div id='content'>
+      <%= yield %>
+    </div>
+
+    <%= render 'application/footer' %>
+  </div>
+</body>
+</html>

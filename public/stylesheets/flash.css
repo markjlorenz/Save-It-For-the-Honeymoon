@@ -1,0 +1,10 @@
+.flash.section{
+  margin-right:20px;
+  padding:0.5em;
+  float:right;
+  background-color: #FDEADC;
+  border 1px solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 0px 0px gray;
+}

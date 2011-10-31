@@ -1,0 +1,95 @@
+<h1 class='redeem-title'><%= @deal.merchant.name.possessive %> Merchant Dashboard</h1>
+
+
+<div class='section' style='float:left;'>
+  <%= render template:'deals/show' %>
+</div>
+
+<div id='favor-redemption-input'>
+   <div class='section'>
+     <h2>Enter the barcode number here:</h2>
+     <div id='purchased-deal-alert'>
+      <%= (render 'application/ui_error', text:alert) unless alert.blank? %>
+     </div>
+     <%= form_for :purchased_deal, url:redeem_purchased_deal_path do |f| %>
+       <%= hidden_field_tag '_method', 'put' %>
+       <%= f.text_field :identifier, placeholder:"#{PurchasedDeal::IdentifierLength} letters and numbers" %>
+       <%= f.hidden_field :redeem, value:'1' %>
+       <%= f.submit 'Redeem' %>
+     <% end %>
+  </div>
+</div>
+
+<div id='merchant-stats' class='section'>
+  <div class='section'>
+    <h2>Deal Statistics:</h2>
+    <table cellspacing="0">
+      <tr>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Purchased</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Redeemed</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Outstanding</td>
+        <td></td>
+      </tr>
+
+
+      
+    </table>
+  </div>
+</div>
+
+
+<style type="text/css">
+  #alert{
+    color:black;
+    font-weight:bold;
+  }
+  /*css specificity requires the .section specificatin requirement here*/
+  #merchant-stats table{
+    width:100%;
+  }
+  #merchant-stats.section{
+    float:left;
+    width:323px;
+  }
+  #merchant-stats.section>.section{
+    margin:1em;
+  }
+  #favor-redemption-input{
+    float:left;
+    width: 323px;
+    min-height:200px;
+    margin:8px;
+    box-shadow:inset gray 0px 0px 5px;
+    background-color:green;
+    border-radius:16px;
+    border: 1px solid gray;
+  }
+  #favor-redemption-input input{
+    width:16em;
+    margin-top:16px;
+    margin-bottom:16px;
+  }
+  #favor-redemption-input>.section{
+    margin: 1em;
+  }
+  #favor-redemption-input>.section form{
+    text-align: center;
+  }
+  #content{
+    padding-right: 20px;
+    padding-left: 120px
+  }
+  .buy-it{
+    display:none !important;
+  }
+</style>
